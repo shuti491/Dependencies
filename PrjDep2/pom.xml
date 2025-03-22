@@ -17,7 +17,7 @@
         <id>github</id>
         <url>github::https://maven.pkg.github.com/shuti491/Dependencies</url>
     </repository>
-</repositories>
+    </repositories>
     
         <build>
         <plugins>
