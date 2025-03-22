@@ -7,6 +7,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write  # Required for creating releases
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,17 +26,22 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean package
+      working-directory: ./PrjDep2
+
+    - name: List files after build
+      run: ls -R ./PrjDep2/target
 
     - name: Upload JAR as Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: my-dep-app
-        path: target/*.jar
+        name: my-java-app
+        path: ./PrjDep2/target/*.jar
 
     - name: Push JAR to GitHub Releases
-      uses: ncipollo/release-action@v1
+      uses: softprops/action-gh-release@v1
       with:
-        tag: v1.0.${{ github.run_number }}
+        tag_name: ${{ github.run_number }}
         name: " Dep Release ${{ github.run_number }}"
-        artifacts: target/*.jar
-
+        files: ./PrjDep2/target/*.jar
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
