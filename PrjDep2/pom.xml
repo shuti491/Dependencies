@@ -11,13 +11,13 @@
            <maven.compiler.source>1.8</maven.compiler.source>
            <maven.compiler.target>1.8</maven.compiler.target>
      </properties>
-   
-    <repositories>
-    <repository>
+  
+   <distributionManagement>
+      <repository>
         <id>github</id>
         <url>https://maven.pkg.github.com/shuti491/Dependencies</url>
-    </repository>
-    </repositories>
+       </repository>  
+    </distributionManagement>
     
         <build>
         <plugins>
