@@ -32,7 +32,7 @@ jobs:
       working-directory: ./PrjDep2
     
     - name: Publish to GitHub Packages
-      run: mvn deploy -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/shuti491/Dependencies
+      run: mvn deploy -DaltDeploymentRepository=github::https://maven.pkg.github.com/shuti491/Dependencies
       working-directory: ./PrjDep2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
