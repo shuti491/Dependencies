@@ -30,13 +30,7 @@ jobs:
     - name: Build with Maven
       run: mvn clean package
       working-directory: ./PrjDep2
-    
-    - name: Publish to GitHub Packages
-      run: mvn deploy
-      working-directory: ./PrjDep2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+  
     - name: List files after build
       run: ls -R ./PrjDep2/target
 
@@ -50,7 +44,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         tag_name: ${{ github.run_number }}
-        name: " Dep Release ${{ github.run_number }}"
+        name: "Dep Release ${{ github.run_number }}"
         files: ./PrjDep2/target/*.jar
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
