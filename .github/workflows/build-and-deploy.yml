@@ -48,11 +48,11 @@ jobs:
         files: ./PrjDep2/target/*.jar
       env:
         GITHUB_USERNAME: shuti491
-        GITHUB_TOKEN: ${{ secrets.MYSECRET }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
 
     - name: Publish to GitHub Packages
       run: mvn deploy
       working-directory: ./PrjDep2
       env:
          GITHUB_USERNAME: shuti491
-         GITHUB_TOKEN: ${{ secrets.MYSECRET }}  
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
