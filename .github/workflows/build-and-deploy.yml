@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write  # Required for creating releases
+  packages: write
 
 jobs:
   build:
@@ -23,10 +24,18 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+        server-id: github
+        settings-path: ${{ github.workspace }}
 
     - name: Build with Maven
       run: mvn clean package
       working-directory: ./PrjDep2
+    
+    - name: Publish to GitHub Packages
+      run: mvn deploy
+      working-directory: ./PrjDep2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: List files after build
       run: ls -R ./PrjDep2/target
