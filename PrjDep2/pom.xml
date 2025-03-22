@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.shr</groupId>
   <artifactId>PrjDep1</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
   
    <properties>
@@ -11,12 +11,13 @@
            <maven.compiler.source>1.8</maven.compiler.source>
            <maven.compiler.target>1.8</maven.compiler.target>
      </properties>
-    <distributionManagement>
+   
+    <repositories>
     <repository>
         <id>github</id>
         <url>github::https://maven.pkg.github.com/shuti491/Dependencies</url>
     </repository>
-    </distributionManagement>
+</repositories>
     
         <build>
         <plugins>
