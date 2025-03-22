@@ -48,3 +48,8 @@ jobs:
         files: ./PrjDep2/target/*.jar
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build and Publish Package
+      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
