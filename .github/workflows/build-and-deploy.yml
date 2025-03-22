@@ -47,10 +47,12 @@ jobs:
         name: "Dep Release ${{ github.run_number }}"
         files: ./PrjDep2/target/*.jar
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_USERNAME: shuti491
+        GITHUB_TOKEN: ${{ secrets.MYSECRET }}
 
     - name: Publish to GitHub Packages
       run: mvn deploy
       working-directory: ./PrjDep2
       env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         GITHUB_USERNAME: shuti491
+         GITHUB_TOKEN: ${{ secrets.MYSECRET }}  
