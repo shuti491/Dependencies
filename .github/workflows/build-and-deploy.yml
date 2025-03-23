@@ -25,7 +25,7 @@ jobs:
           echo '<settings>
             <servers>
               <server>
-                <id>my-repo</id>
+                <id>github</id>
                 <username>${{ secrets.REPO_USER }}</username>
                 <password>${{ secrets.REPO_PASS }}</password>
               </server>
