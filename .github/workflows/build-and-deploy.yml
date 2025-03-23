@@ -50,7 +50,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Publish to GitHub Packages
-      run: mvn deploy
+      run: mvn deploy -e
       working-directory: ./PrjDep2
       env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
