@@ -3,14 +3,8 @@ name: Java CI with Maven
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'PrjDep2/**'
-      - 'PrjDep3/**'
   pull_request:
     branches: [ main ]
-    paths:
-      - 'PrjDep2/**'
-      - 'PrjDep3/**'
   workflow_dispatch:
 
 permissions:
