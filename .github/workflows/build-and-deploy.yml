@@ -66,4 +66,9 @@ jobs:
       run: mvn deploy -X
       working-directory: ./PrjDep2
       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+
+    - name: Check Dependencies
+      uses: gregsdennis/dependencies-action@1.3.0
+      env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
