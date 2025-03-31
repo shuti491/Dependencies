@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: [PrjDep2, PrjDep3]
+        project: [PrjDep2, PrjDep3, prjdep4, prjdep5]
     
     steps:
     - name: Checkout Repository
